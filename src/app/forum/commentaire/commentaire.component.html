@@ -1,0 +1,41 @@
+<button (click)="return()">return</button>
+    <div class="card gedf-card">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-2">
+                            <img class="rounded-circle" width="45" src="data:image/png;base64,{{publication?.contact.nomDetail.photo}}">
+                    </div>
+                    <div class="ml-2">
+                        <a class="card-link" >
+                        <div class="h5 m-0 text-primary">{{publication?.titre}}</div>
+                        </a>
+                        <div class="h7 text-muted">@{{publication?.contact?.nomDetail.prenom}} {{publication?.contact?.nomDetail.nom}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card-body">
+                <img src="data:image/png;base64,{{publication?.photo}}" class="card-img" style="height:auto;width:80%;">
+            <div class="text-muted h7 mb-2">     
+                    <h5 class="card-title ">  {{publication?.sujet}}</h5>
+            </div>
+            <p class="card-text">
+            Publié le: {{publication?.datePublication}}<i  class="fa fa-clock-o"></i>
+            </p>
+        </div>
+        <div class="card-footer">
+            <a (click)=" Jaime(publication.code)"style="cursor:pointer" class="card-link">{{publication?.nbreJaime}}
+              <i class="fa fa-gittip colorjaime"></i> J'aime</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-group">         
+            <textarea class="form-control" rows="5" placeholder="Ecrivez votre texte" name="texte" [(ngModel)]="commentaire.texte"></textarea>
+        </div>
+        <div style="margin-left: 80%;top:20px">
+            <button (click)="AjoutComment" class="btn btn-success">commenter</button>
+        </div>
+    </div>
+           

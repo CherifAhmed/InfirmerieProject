@@ -1,0 +1,21 @@
+.colorjaime{
+    color: indianred;
+}
+.comment {
+    float: left;
+    width: 100%;
+    height: auto;
+    }
+    .textinput {
+        float:left;
+        width: 100%;
+        min-height: 75px;
+        outline: none;
+        resize: none;
+        border: 1px solid grey;
+        }
+        .container {
+            max-width:650px;
+            margin: 0px auto;
+            margin-top: 50px;
+            }

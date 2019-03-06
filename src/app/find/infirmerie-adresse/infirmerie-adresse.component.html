@@ -1,0 +1,52 @@
+<p></p>
+<div class="container fluid"  style="margin-top:2%">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4 col-mg-offset-4">
+      <form class="form-inline" >
+          <div class="input-group ">
+            <input type="text" class="form-control" style=" height: 50px; width:500px;" name='adresseContact' [(ngModel)]="adresseContact"
+                placeholder="Tapez une adresse" required='' aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                  <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="rechercheadresse()" >
+                    <i class="fa fa-search fa-2x "></i> 
+                  </button>
+              </div>
+          </div>
+      </form>
+    </div>
+    <br><br>
+  </div>
+</div>
+  <div class="container-fluid" style="margin-top:2%">
+    <div class="row">
+      <div class=" col-md-6 col-sm-9 col-xs-12" >
+          <table class="table table-sm">
+            <thead class="text-center">
+              <tr class="table-success">
+                <th scope="col">  </th>
+                <th scope="col">Nom</th>
+                <th scope="col"> Adresse</th>
+                <th scope="col"> Tel</th>
+                <th scope="col"> Spécialité</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-light" *ngFor="let p of infirmiers?.content">
+                <td ><img class="rounded-circle" width="45" src="data:image/png;base64,{{p.nomDetail.photo}}"></td>
+                <td>{{p.nomDetail.prenom}} {{p.nomDetail.nom}}</td>
+                <td>{{p.adresse.region}},{{p.adresse.ville}},{{p.adresse.cite}}</td>
+                <td>{{p.nomDetail.tel}}</td>
+                <td>{{p.specialite}}</td>    
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class=" col-md-6 col-sm-9 col-xs-12"  >
+        <button class="btn btn-primary" (click)="voirCarte()">Voir la carte<br>
+            <i class="fas fa-angle-down"></i></button>
+            <div class="carte" id="map">
+            </div>
+    
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,13 @@
+i { margin-left:5%;
+    cursor: pointer;
+}
+.image-upload > input
+{
+    display: none;
+}
+.nouvpub{
+    font-size: 150%;
+}
+.check{
+    color: olivedrab;
+}

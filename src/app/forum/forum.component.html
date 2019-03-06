@@ -1,0 +1,28 @@
+
+<div class=" row">
+  <div class=" col-md-3">
+    <div class="container">
+      <div>
+        <img src="assets/forum.jpg">
+     </div>
+     <br>
+    <div>
+      <button class="btn btn-primary"(click)=gotopublish()> Ajouter une publication</button>
+    </div>
+    </div>
+  </div>
+  <div class=" col-md-6">
+    <br>
+    <div *ngIf="code==0">
+      <app-publicationforum (code)="code=$event" (id)="id=$event"></app-publicationforum>
+    </div>
+    <div *ngIf="code==1">
+      <app-commentaire (code)="code=$event" [id]="id"></app-commentaire>
+    <div>
+  </div>
+  <div class="col-md-3">
+    
+  </div>
+</div>
+           
+   

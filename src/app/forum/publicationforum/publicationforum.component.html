@@ -1,0 +1,30 @@
+<div *ngFor="let p of publications?.reverse()">
+    <div class="card ">
+        <div class="card-header text-info">
+          <img src="data:image/png;base64,{{p.contact.nomDetail.photo}}" class="rounded-circle" height="40" width="40">
+          {{p.titre}}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <div class="row">
+              <div class="col-md-6">
+                 <p>{{p.sujet}}</p>
+                 <footer class="blockquote-footer">publié le {{p.datePublication}} par 
+                    <cite title="Source Title">
+                      {{p.contact.nomDetail.prenom}} {{p.contact.nomDetail.nom}}
+                    </cite> 
+                 </footer>       
+              </div>
+             <div class="col-md-6">
+              <img src="data:image/png;base64,{{p.photo}}" height=70 width=auto style="margin-left:40%">
+             </div>
+            </div>      
+          </blockquote>
+          <div>
+              <a (click)="Jaime(p.code)" style="cursor: pointer">{{p.nbreJaime}} <i class="fa fa-gittip colorjaime "></i> J'aime</a>
+              <a (click)="commenter(p.code)" style="cursor: pointer; margin-left: 20%" class="card-link "><i class="fa fa-comment colorcomment"></i> Commenter</a>
+          </div>
+        </div>
+    </div>
+    <br>
+</div>

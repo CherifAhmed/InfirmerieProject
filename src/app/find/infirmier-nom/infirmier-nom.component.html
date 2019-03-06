@@ -1,0 +1,52 @@
+<p></p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-lg-offset-4">
+          <form class="form-inline " >
+              <div class="input-group ">
+                  <input type="text" class="form-control" style=" height: 50px;width: 200%" name='nomContact' [(ngModel)]="nomContact"
+                      placeholder="Tapez une spécialité" aria-label="Recipient's username" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="recherchenom()" >
+                          <i class="fa fa-search fa-2x"></i> 
+                      </button>
+                  </div>
+              </div>
+          </form>
+        </div>
+    </div>
+</div>
+<br>
+
+<div class="container">
+<table class="table table-sm">
+  <thead class="text-center">
+    <tr class="table-success">
+      <th scope="col">#</th>
+      <th scope="col"> Photo </th>
+      <th scope="col">Nom</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Spécialité</th>
+      <th scope="col">Tel</th>
+      <th scope="col">Préstation de son service</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-light" *ngFor="let p of infirmiers?.content">
+      <th scope="row"></th>
+      <td > <img class="rounded-circle" width="45" src="data:image/png;base64,{{p.nomDetail.photo}}" ></td>
+      <td>{{p.nomDetail.prenom}} {{p.nomDetail.nom}}</td>
+      <td>{{p.adresse.region}}</td>
+      <td>{{p.specialite}}</td>
+      <td>{{p.nomDetail.tel}}</td>
+      <td> <div class="rating"><!--
+      --><a (click)="cinq()" title="Donner 5 étoiles">☆</a><!--
+      --><a (click)="quatre()" title="Donner 4 étoiles">☆</a><!--
+      --><a (click)="trois()" title="Donner 3 étoiles">☆</a><!--
+      --><a (click)="deux()" title="Donner 2 étoiles">☆</a><!--
+      --><a (click)="une()" title="Donner 1 étoile">☆</a>
+   </div></td>
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,109 @@
+<div  *ngIf="code==0">
+  <div class="container">
+    <div class="alert alert-success col-md-6 offset-md-3" style=" margin-top: 3%" >
+        <form class=" mx-auto">
+          <h3 >CHOIX DE COMPTE</h3>
+                <div class="form-group col-md-12">
+                  <select id="typeCompte" name="typeCompte" class="custom-select my-1 mr-sm-2" required [(ngModel)]="typeCompte">
+                    <option value='Docteur'> Docteur</option>
+                    <option value='Infirmier'> Infirmier </option>
+                    <option value='Auxiliére de vie'> Auxiliére de vie</option>
+                    <option value='Ambulancier'> Ambulancier</option>
+                    <option value='Accés Visiteur'> Accés Visiteur</option>
+                  </select>
+                </div>
+          <button class="btn btn-primary" (click)="enterforform()" [disabled]="typeCompte==''"> valider</button> 
+          </form>
+    </div>
+ </div>
+    <br>
+  <div>
+    <div class="row">
+     <div class="alert  alert-dark col-md-4">
+          vous etes docteurs? infirmiers? Axilieres de vie? Ambulancier? utulisateur?
+          Faites votre inscription pour pouvoir communiquer ave
+          <span> Pour les patients</span>
+          Un doute, une inquiétude, vous etes agé et tu ne peux pas te déplacer.<br><br>
+           Besoin d’un professionnels de santé chez vous? SANAD.tn c’est la solution
+          SANAD.tn est une plateforme innovante qui vous permet de trouver rapidement un médecin, un infirmier, un auxiliére de vie, une ambulance les plus proches de chez vous.
+          SANAD.tn vous permet d' acceder au forum gratuitement pour poser vos questions en ligne directement aux spécialistes en respectant les termes de confidentialité.
+          SANAD.tn est une plateforme de préstation de service afin de communiquer avec les professionnels.
+      </div>
+      <div class="alert  alert-dark col-md-4">
+          <span>Pour les professionnels de santé </span>
+                SANAD.tn est un service de santé à domicile, qui optimise votre organisation et vous fait gagner du temps. Avec med.tn, vous partagez vos disponibilités en temps réel avec vos patients selon vos critères, tout en gardant la main sur votre agenda médical. 
+                Med.tn vous permet d’entrer en contact directement avec des patients et de répondre à leurs interrogations.
+                Notre objectif final est d'améliorer l'accès aux soins en mettant à votre disposition des outils simples et intuitifs pour que chacun devienne acteur de sa santé et de son bien-être.
+      </div>
+      <div class="alert  alert-dark col-md-4">
+          <span>Pour les organisations humantaires de santé </span>
+             SANAD.tn est une plateforme qui permet de vous faciliter l'accés aux gens demandant le soutient médical et humanitaire.
+      </div>
+  </div>
+  </div>
+</div>
+  <div  class="alert alert-success col-md-8 offset-md-2" *ngIf="code==1">
+    <div class="card"> 
+      <div class="card-header">
+            <div class="profile-img col-md-4">
+                  <img src="assets/inconnu.png" class="card-img-top"(mouseenter)="changeimage()">
+                  <div class="file btn btn-lg btn-primary" [ngStyle]="{'display':mouseonimage?'block':'none'}">
+                        Insérez ta photo
+                    <input type="file" (change)="onFileSelected($event)">
+                  </div>           
+            </div>
+            <br><br>
+            <div class="col-md-4 offset-md-2">
+              <h3 class="mb-0">INSCRIPTION </h3>
+            </div>
+      </div>
+      <div class="card-body">
+          <form> 
+                <div class="form-row" >
+                    <div class="form-group col-md-6">
+                      <label for="Nom1">Nom*</label>
+                      <input type="text" class="form-control" id="Nom1" required placeholder=" nom" name="nom" [(ngModel)]="contact.nomDetail.nom">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="prenom1">Prénom*</label>
+                        <input type="text" class="form-control" id="prenom1" name="prenom" required placeholder=" prenom"  [(ngModel)]="contact.nomDetail.prenom">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email*</label>
+                        <input type="email" class="form-control" id="inputEmail4" name="email" required [(ngModel)]="contact.email"  email placeholder="you@exemple.com">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Mot de passe*</label>
+                        <input type="password" class="form-control" name="password" id="inputPassword4" required [(ngModel)]="contact.password" placeholder="Password" >
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label for="specialite">Specialité</label>
+                        <input type="text" class="form-control" name="specialite" [(ngModel)]="contact.specialite" id="specialite" >
+                    </div>
+                    <div class="form-group col-md-6 ">
+                        <label for="tel">Télephone</label>
+                        <input type="text" class="form-control" name="tel" [(ngModel)]="contact.nomDetail.tel" id="tel" >
+                    </div>
+              </div>  
+                <br>
+                    <div class="form-row" >
+                      <div class="form-group col-md-4">
+                      <label for="Region">Région*</label>
+                      <input type="text" class="form-control" id="Region" required name="region" [(ngModel)]="contact.adresse.region" placeholder="Ta région" >
+                      </div>
+                      <div class="form-group col-md-4">
+                        <label for="ville">Ville*</label>
+                        <input type="text" class="form-control" required name="ville" [(ngModel)]="contact.adresse.ville" id="ville">
+                      </div>
+                      <div class="form-group col-md-4">
+                          <label for="cite">Cité</label>
+                          <input type="text" class="form-control" name="cite" [(ngModel)]="contact.adresse.cite" id="cite" >
+                      </div>
+                  </div>   
+              <button type="submit" class="btn btn-primary" (click)="onSubmit()">S'inscrire </button>
+          </form>
+      </div>
+    </div>
+  </div>    
+
+
